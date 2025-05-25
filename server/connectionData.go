@@ -7,13 +7,15 @@ type ConnectionData struct {
 	Conn     *websocket.Conn
 	ConnId   int
 	RoomId   int
+	Send     chan []byte
 }
 
-func newConnectionData(username string, conn *websocket.Conn, connId int, roomId int) *ConnectionData {
+func NewConnectionData(username string, conn *websocket.Conn, connId int, roomId int) *ConnectionData {
 	return &ConnectionData{
 		Username: username,
 		Conn:     conn,
 		ConnId:   connId,
 		RoomId:   roomId,
+		Send:     make(chan []byte, 256),
 	}
 }

@@ -6,7 +6,7 @@ type Room struct {
 	Users    map[int]*ConnectionData
 }
 
-func newRoom(roomName string, roomId int) *Room {
+func NewRoom(roomName string, roomId int) *Room {
 	return &Room{
 		RoomName: roomName,
 		RoomId:   roomId,
@@ -14,6 +14,6 @@ func newRoom(roomName string, roomId int) *Room {
 	}
 }
 
-func (r *Room) addUser(connData *ConnectionData) {
+func (r *Room) AddUser(connData *ConnectionData) {
 	r.Users[connData.ConnId] = connData
 }
