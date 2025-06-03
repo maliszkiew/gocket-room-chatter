@@ -1,4 +1,4 @@
-module gocket-room-chatter
+module server
 
 go 1.24
 
